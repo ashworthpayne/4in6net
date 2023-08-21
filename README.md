@@ -1,3 +1,3 @@
 # 4in6net
-ForensicsNet repository
-Look in fortigate
+ForensicsNet repository.
+Look in /fortigate
