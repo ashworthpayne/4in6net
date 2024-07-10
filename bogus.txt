@@ -1,4 +1,4 @@
-// Deny traffic to these internet destinations from your WAN or SDWAN.
+# Deny traffic to these internet destinations from your WAN or SDWAN.
 0.0.0.0/8
 10.0.0.0/8
 127.0.0.0/8
