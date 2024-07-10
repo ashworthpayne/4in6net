@@ -1,9 +1,9 @@
-# Deny traffic to these internet destinations from your WAN or SDWAN.
+# Deny traffic to these internet destinations from your LAN via your WAN or SDWAN. 
 0.0.0.0/8
 10.0.0.0/8
 127.0.0.0/8
-169.254.0.0/16
-172.16.0.0/12
+169.254.0.0/16 # RFC3927
+172.16.0.0/12 # RFC1918
 192.0.0.0/24
 192.0.2.0/24
 192.88.99.0/24
