@@ -1,4 +1,5 @@
-# Title: 4in6.net list of demonstrably antisocial networks
+# Demonstrably antisocial networks- for DNS blackholing.
+# 
 # Subscribe at your own risk
 0.0.0.0 facebook.com
 0.0.0.0 linkedin.com
