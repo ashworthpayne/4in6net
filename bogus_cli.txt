@@ -1,0 +1,134 @@
+config firewall address
+    edit "RFC1122-0.0.0.0_8"        
+    set subnet 0.0.0.0 255.0.0.0        
+    set comment "RFC1122"
+    next
+    edit "RFC1918-10.0.0.0_8"       
+    set subnet 10.0.0.0 255.0.0.0       
+    set comment "RFC1918"
+    next
+    edit "RFC6598-100.64.0.0_10"    
+    set subnet 100.64.0.0 255.192.0.0   
+    set comment "RFC6598 CGN"
+    next
+    edit "LOOPBACK-127.0.0.0_8"     
+    set subnet 127.0.0.0 255.0.0.0      
+    set comment "Loopback"
+    next
+    edit "LL-169.254.0.0_16"        
+    set subnet 169.254.0.0 255.255.0.0  
+    set comment "Link-local"
+    next
+    edit "RFC1918-172.16.0.0_12"    
+    set subnet 172.16.0.0 255.240.0.0   
+    set comment "RFC1918"
+    next
+    edit "IANA-192.0.0.0_24"        
+    set subnet 192.0.0.0 255.255.255.0  
+    set comment "IANA special-use"
+    next
+    edit "TESTNET1-192.0.2.0_24"    
+    set subnet 192.0.2.0 255.255.255.0  
+    set comment "TEST-NET-1"
+    next
+    edit "6TO4-RELAY-192.88.99.0_24" 
+    set subnet 192.88.99.0 255.255.255.0 
+    set comment "Anycast 6to4 relay (deprecated)"
+    next
+    edit "RFC1918-192.168.0.0_16"   
+    set subnet 192.168.0.0 255.255.0.0  
+    set comment "RFC1918"
+    next
+    edit "BENCH-198.18.0.0_15"      
+    set subnet 198.18.0.0 255.254.0.0   
+    set comment "RFC 2544/6890"
+    next
+    edit "TESTNET2-198.51.100.0_24" 
+    set subnet 198.51.100.0 255.255.255.0 
+    set comment "TEST-NET-2"
+    next
+    edit "TESTNET3-203.0.113.0_24"  
+    set subnet 203.0.113.0 255.255.255.0 
+    set comment "TEST-NET-3"
+    next
+    edit "MCAST-224.0.0.0_4"        
+    set subnet  224.0.0.0/4 
+    set comment "Multicast"
+    next
+    edit "RESV-240.0.0.0_4"         
+    set subnet 240.0.0.0/4
+    set comment "Reserved"
+    next
+    edit "BCAST-255.255.255.255_32" 
+    set subnet 255.255.255.255 255.255.255.255 
+    set comment "Limited broadcast"
+    next
+  end
+
+  config firewall address6
+    edit "IPV6-UNSPEC-::/128"   
+    set ip6 ::/128     
+    set comment "Unspecified"
+    next
+    edit "IPV6-LOOP-::1/128"    
+    set ip6 ::1/128    
+    set comment "Loopback"
+    next
+    edit "IPV6-V4MAPPED-::ffff:0:0/96" 
+    set ip6 ::ffff:0:0/96 
+    set comment "IPv4-mapped"
+    next
+    edit "NAT64-64:ff9b::/96"   
+    set ip6 64:ff9b::/96
+    set comment "Well-known NAT64"
+    next
+    edit "IPV6-DISCARD-100::/64" 
+    set ip6 100::/64  
+    set comment "Discard-only"
+    next
+    edit "TEREDO-2001::/32"     
+    set ip6 2001::/32  
+    set comment "Teredo"
+    next
+    edit "BMWG-2001:2::/48"     
+    set ip6 2001:2::/48 
+    set comment "Benchmarking"
+    next
+    edit "DOC-2001:db8::/32"    
+    set ip6 2001:db8::/32 
+    set comment "Documentation"
+    next
+    edit "6TO4-2002::/16"       
+    set ip6 2002::/16  
+    set comment "6to4"
+    next
+    edit "ULA-fc00::/7"         
+    set ip6 fc00::/7   
+    set comment "Unique local"
+    next
+    edit "LL-fe80::/10"         
+    set ip6 fe80::/10  
+    set comment "Link-local"
+    next
+    edit "MCAST-ff00::/8"       
+    set ip6 ff00::/8   
+    set comment "Multicast"
+    next
+    edit "ORCHID2-2001:20::/28" 
+    set ip6 2001:20::/28 
+    set comment "ORCHIDv2"
+    next
+  end
+
+  config firewall addrgrp
+    edit "NO-ROUTE-v4"
+      set member "RFC1122-0.0.0.0_8" "RFC1918-10.0.0.0_8" "RFC6598-100.64.0.0_10" "LOOPBACK-127.0.0.0_8" "LL-169.254.0.0_16" "RFC1918-172.16.0.0_12" "IANA-192.0.0.0_24" "TESTNET1-192.0.2.0_24" "6TO4-RELAY-192.88.99.0_24" "RFC1918-192.168.0.0_16" "BENCH-198.18.0.0_15" "TESTNET2-198.51.100.0_24" "TESTNET3-203.0.113.0_24" "MCAST-224.0.0.0_4" "RESV-240.0.0.0_4" "BCAST-255.255.255.255_32"
+    next
+  end
+
+  config firewall addrgrp6
+    edit "NO-ROUTE-v6"
+      set member "IPV6-UNSPEC-::/128" "IPV6-LOOP-::1/128" "IPV6-V4MAPPED-::ffff:0:0/96" "NAT64-64:ff9b::/96" "IPV6-DISCARD-100::/64" "TEREDO-2001::/32" "BMWG-2001:2::/48" "DOC-2001:db8::/32" "6TO4-2002::/16" "ULA-fc00::/7" "LL-fe80::/10" "MCAST-ff00::/8" "ORCHID2-2001:20::/28"
+    next
+  end
+end
