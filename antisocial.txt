@@ -1,5 +1,3 @@
-# Demonstrably antisocial networks- for DNS blackholing.
-# 
-# Subscribe at your own risk
+# TEST. DO NOT USE. CONTENT CHURNS. DO NOT USE.
 0.0.0.0 facebook.com
 0.0.0.0 linkedin.com
