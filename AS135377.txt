@@ -1,5 +1,5 @@
 # AS135377 – UCLOUD INFORMATION TECHNOLOGY (HK) LIMITED
-# Hostile toward our network.
+# These networks have demonstrated hostile intent. Not dropping. DENYing.
 103.218.243.0/24
 45.192.10.0/24
 107.150.104.0/21
